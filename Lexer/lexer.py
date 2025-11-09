@@ -1,6 +1,7 @@
 import ply.lex as lex
 import argparse
 import shutil
+import os
 from collections import Counter
 
 # --- Reserved Keywords ---
@@ -204,11 +205,19 @@ if __name__ == '__main__':
             for tok_type, cnt in counts.most_common():
                 print(f"  {tok_type:20} {cnt}")
 
-    data = open('input.txt')
+    try:
+        file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
+        with open(file_path, 'r') as file:
+            data = file.read()
+    except FileNotFoundError:
+        print(f"Error: input.txt file not found at {file_path}")
+        exit(1)
+    except IOError:
+        print(f"Error: Could not read input.txt file at {file_path}")
+        exit(1)
 
     # Lexems
-    lexer.input(data.read())
-    data.close()
+    lexer.input(data)
 
     # Better output formatting
     token_list = []
