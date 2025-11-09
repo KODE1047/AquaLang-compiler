@@ -107,26 +107,22 @@ def t_ignore_COMMENT_SINGLE(t):
 
 # --- Complex Token Rules (Literals & ID) ---
 
-# Floating Point Literals
 # Matches: 123.45, 123.45e-6, 123e6
 def t_FLOAT_LITERAL(t):
     r'[0-9]+\.[0-9]+([eE][+-]?[0-9]+)? | [0-9]+[eE][+-]?[0-9]+'
     return t
 
-# Integer Literals (Hex or Decimal)
 # Matches: 0xABC, 123
 def t_INT_LITERAL(t):
     r'0x[0-9a-fA-F]+ | [0-9]+'
     return t
 
-# Character Literals
 # Matches: 'a', '\n', '\''
 def t_CHAR_LITERAL(t):
     r"\'([^'\\] | \\.)\'"
     t.value = t.value[1:-1]  # Remove surrounding quotes
     return t
 
-# String Literals
 # Matches: "hello", "line\n", "quote\""
 def t_STRING_LITERAL(t):
     r'\"([^"\\] | \\.)*\"'
@@ -151,7 +147,6 @@ def t_error(t):
     t.lexer.skip(1)
 
 # --- Build the Lexer ---
-# CORRECTED LINE: Use lex.lex() instead of lex.build()
 lexer = lex.lex()
 
 # --- Test Harness ---
@@ -161,7 +156,7 @@ if __name__ == '__main__':
     parser.add_argument('--summary', action='store_true', help='Show a summary count of token types at the end')
     args = parser.parse_args()
 
-    # Helper: colorize text when allowed
+    # Colorize text 
     def _color(text, code, enable=True):
         if not enable:
             return str(text)
@@ -169,23 +164,19 @@ if __name__ == '__main__':
 
     def _format_value(val):
         s = repr(val) if not isinstance(val, str) else val
-        # make newlines visible
         s = s.replace('\n', '\\n')
-        # truncate long values
         max_len = 40
         if len(s) > max_len:
             return s[:max_len-3] + '...'
         return s
 
     def pretty_print(tokens, use_color=True, show_summary=False):
-        # Compute terminal width and column sizes
         term_w = shutil.get_terminal_size((80, 20)).columns
         idx_w = max(3, len(str(len(tokens))))
         type_w = max(6, max((len(t['type']) for t in tokens), default=6))
         line_w = max(4, max((len(str(t['line'])) for t in tokens), default=4))
 
-        # allocate remaining width to value column
-        other = idx_w + type_w + line_w + 20  # padding and separators
+        other = idx_w + type_w + line_w + 20  
         value_w = max(10, term_w - other)
 
         sep = '+' + '-'*(idx_w+2) + '+' + '-'*(type_w+2) + '+' + '-'*(value_w+2) + '+' + '-'*(line_w+2) + '+'
@@ -215,11 +206,11 @@ if __name__ == '__main__':
 
     data = open('input.txt')
 
-    # Give the lexer some input
+    # Lexems
     lexer.input(data.read())
     data.close()
 
-    # Tokenize into a list first so we can pretty-print and summarize
+    # Better output formatting
     token_list = []
     while True:
         tok = lexer.token()
@@ -232,7 +223,6 @@ if __name__ == '__main__':
             'lexpos': getattr(tok, 'lexpos', None),
         })
 
-    # Print nicely
     print(_color('--- AquaLang Lexer Output ---', '1;37', not args.no_color))
     pretty_print(token_list, use_color=not args.no_color, show_summary=args.summary)
     print(_color('--- End of Output ---', '1;37', not args.no_color))
