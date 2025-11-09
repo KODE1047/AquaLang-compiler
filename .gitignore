@@ -1,0 +1,42 @@
+# ----------------------------------------
+#    PYTHON-SPECIFIC ARTIFACTS
+# ----------------------------------------
+
+# Byte-compiled files (speeds up Python startup)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Virtual Environment - CRITICAL TO IGNORE!
+# This directory is large, OS-specific, and not needed for collaboration.
+venv/
+.env
+
+# Package distribution files
+build/
+dist/
+*.egg-info/
+*.egg
+develop-eggs/
+
+# Installer logs
+pip-log.txt
+
+
+
+# ----------------------------------------
+#   OPERATING SYSTEM & EDITOR SPECIFIC
+# ----------------------------------------
+
+# macOS/OSX Files
+.DS_Store
+
+# Windows Files
+Thumbs.db
+
+# Common IDE/Editor Files (Choose and keep only the ones you use)
+# Visual Studio Code
+.vscode/
+
+# JetBrains/PyCharm
+.idea/
