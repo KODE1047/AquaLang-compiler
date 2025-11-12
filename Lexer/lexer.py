@@ -206,14 +206,16 @@ if __name__ == '__main__':
                 print(f"  {tok_type:20} {cnt}")
 
     try:
-        file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
+        #--------------------------------- test file ---------------------------------
+        test_file = 'test1.txt'
+        file_path = os.path.join(os.path.dirname(__file__), test_file)
         with open(file_path, 'r') as file:
             data = file.read()
     except FileNotFoundError:
-        print(f"Error: input.txt file not found at {file_path}")
+        print(f"Error: {test_file} file not found at {file_path}")
         exit(1)
     except IOError:
-        print(f"Error: Could not read input.txt file at {file_path}")
+        print(f"Error: Could not read {test_file} file at {file_path}")
         exit(1)
 
     # Lexems
