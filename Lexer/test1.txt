@@ -25,6 +25,8 @@
 int ok = 0x64;
 float pi = 3.14e-2;
 
+Kourosh$hwllow;
+
 // Test cases for your errors:
 int bad_hex = 0x;      // ERROR: Malformed hex
 float bad_float = 52.4e; // ERROR: Incomplete float
