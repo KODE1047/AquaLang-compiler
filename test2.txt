@@ -1,0 +1,37 @@
+// test2.txt - Valid AquaLang Program
+
+int globalVar;
+float pi;
+
+func calculate(int a, int b) {
+    int result;
+    result = a + b;
+    
+    if (result > 10) {
+        print(result);
+    } elif (result == 10) {
+        print("Ten");
+    } else {
+        print(0);
+    }
+    
+    return result;
+}
+
+func main() {
+    int x;
+    int y;
+    x = 5;
+    y = 10;
+    
+    x = calculate(x, y);
+    
+    while (x > 0) {
+        x = x - 1;
+        if (x == 2) {
+            continue;
+        }
+    }
+
+name = "kourosh";
+}

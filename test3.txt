@@ -1,0 +1,9 @@
+func main(){
+    int a = 1;
+    w == 15;
+    v === 16;
+    int b;
+    int c
+    b = 10;
+    c = 20
+}
