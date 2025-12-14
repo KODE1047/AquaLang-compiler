@@ -1,36 +1,8 @@
-// This is a single-line comment.
-    /*
-       This is a
-       multi-line comment.
-    */
-    
-    func main() {
-        int _value = 100;
-        float pi = 3.14e-2;
-        string message = "Hello, AquaLang! \n";
-        
-        if (_value >= 0x64 && true) {
-            print(message);
-        } else {
-            char c = 'z';
-        }
-        
-        // Check for loop
-        for (i = 0; i < 10; i = i + 1) {
-            continue;
-        }
-        
-        float bad = 1.2.3; // Error
-    }
-int ok = 0x64;
-float pi = 3.14e-2;
+float x = 7.3
 
-Kourosh$hwllow;
+int 1kou = 12
 
-// Test cases for your errors:
-int bad_hex = 0x;      // ERROR: Malformed hex
-float bad_float = 52.4e; // ERROR: Incomplete float
-float bad_float_2 = 1.0e+; // ERROR: Incomplete float
+kode$ckourosh = 47
 
-int ok_dec = 0;
-string s = "hello"; // This x should be an ID
+
+y = 3..2
