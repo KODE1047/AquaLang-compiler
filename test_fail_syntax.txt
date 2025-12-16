@@ -1,0 +1,23 @@
+// test_fail_syntax.txt
+
+int x = 10;
+
+// ERROR 1: Top-level logic is NOT allowed by your grammar.
+// <program> -> <declaration_list> -> <var_decl> | <func_decl>
+// "print" is a statement, it must be inside a function.
+print("This will fail"); 
+
+func main() {
+    int y = 20;
+    
+    // ERROR 2: Missing semicolon
+    y = y + 1 
+    
+    // ERROR 3: Invalid assignment target (Left-hand side must be an ID or Array Access)
+    10 = y; 
+    
+    // ERROR 4: Mismatched parentheses
+    if (y > 5 {
+        print("Missing Paren");
+    }
+}

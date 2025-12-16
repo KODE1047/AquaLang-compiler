@@ -1,3 +1,0 @@
-sfdaff=9597
-
-sdfadsf() == 15

@@ -1,0 +1,6 @@
+int x;
+
+func main() {
+    // Now 'x' is valid here because we are inside a function block
+    x === 10; 
+}

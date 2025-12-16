@@ -1,8 +1,0 @@
-float x = 7.3
-
-int 1kou = 12
-
-kode$ckourosh = 47
-
-
-y = 3..2

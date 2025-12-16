@@ -1,0 +1,14 @@
+// test_fail_lex.txt
+
+func main() {
+    int price = 100;
+    
+    // ERROR 1: '$' is not a valid token in AquaLang
+    int cost$ = 50; 
+    
+    // ERROR 2: '@' is not valid
+    string email = "user@test.com"; 
+    
+    // ERROR 3: Backticks are not defined for strings
+    string bad = `invalid`; 
+}

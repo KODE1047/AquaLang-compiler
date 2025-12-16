@@ -1,0 +1,39 @@
+// test_pass.txt
+/* STRICT AquaLang Test
+   1. No initialization in declaration (int x; NOT int x=10;)
+   2. No local variables (All vars must be global)
+*/
+
+// Global Declarations only
+int x;
+int y;
+int arr[5];
+float pi;
+
+func main() {
+    // Assignments must be separate from declaration
+    x = 10;
+    y = 20;
+    pi = 3.14;
+
+    // Array access
+    arr[0] = x + y;
+
+    // Function Call
+    print(arr[0]);
+
+    // Logic
+    if (x < y) {
+        print(x);
+    } else {
+        print(y);
+    }
+
+    // Loops
+    while (x > 0) {
+        x = x - 1;
+        if (x == 5) {
+            break;
+        }
+    }
+}
