@@ -89,6 +89,8 @@ def p_statement_list(p):
 
 def p_statement(p):
     '''statement : assignment SEMI
+                 | var_decl             
+                 | func_call SEMI       
                  | if_stmt
                  | while_stmt
                  | for_stmt
