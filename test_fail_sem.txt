@@ -1,0 +1,14 @@
+// test_fail_func_args.txt
+func add(int a, int b) {
+    int sum;
+    sum = a + b;
+    return;
+}
+
+func main() {
+    // 'add' expects 2 integers.
+    // We are passing 3 arguments.
+    // Parser sees a valid function call structure.
+    // Semantic analyzer counts arguments and flags mismatch.
+    add(10, 20, 30); 
+}

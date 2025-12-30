@@ -11,7 +11,7 @@ func main() {
     int y = 20;
     
     // ERROR 2: Missing semicolon
-    y = y + 1 
+    y = y + 1
     
     // ERROR 3: Invalid assignment target (Left-hand side must be an ID or Array Access)
     10 = y; 
